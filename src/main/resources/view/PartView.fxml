@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Ryan Dorman
+    ID: 001002824
+-->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="500.0" stylesheets="@theme.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="info.ryandorman.inventorysystem.controller.PartViewController">
+    <children>
+        <VBox prefHeight="500.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox prefHeight="50.0" prefWidth="500.0" spacing="40.0">
+                    <children>
+                        <Label fx:id="title" styleClass="secondary-header-text" text="Add Part" />
+                        <RadioButton fx:id="inHouseRadioButton" mnemonicParsing="false" onAction="#onSourceToggleGroupUpdate" text="In-House" />
+                        <RadioButton fx:id="outsourcedRadioButton" mnemonicParsing="false" onAction="#onSourceToggleGroupUpdate" text="Outsourced" />
+                    </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+                </HBox>
+            <GridPane>
+              <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="75.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="175.0" minWidth="-Infinity" prefWidth="110.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="342.0" minWidth="10.0" prefWidth="329.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="NEVER" />
+                <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="NEVER" />
+                <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="NEVER" />
+                  <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="NEVER" />
+              </rowConstraints>
+               <children>
+                  <Label text="ID" GridPane.columnIndex="1" />
+                  <TextField fx:id="idTextField" disable="true" maxWidth="-Infinity" prefWidth="150.0" promptText="Auto Gen - Disabled" GridPane.columnIndex="2" />
+                  <TextField fx:id="nameTextField" maxWidth="-Infinity" prefWidth="150.0" promptText="Part Name" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Label text="Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Inv" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Price/Cost" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="stockTextField" maxWidth="-Infinity" prefWidth="150.0" promptText="Inv" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextField fx:id="priceTextField" maxWidth="-Infinity" prefWidth="150.0" promptText="Price/Cost" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="75.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="130.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="137.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Max" GridPane.columnIndex="1" />
+                  <Label layoutX="82.0" layoutY="17.0" text="Min" GridPane.columnIndex="3" />
+                  <TextField fx:id="maxTextField" maxWidth="-Infinity" prefWidth="100.0" promptText="Max" GridPane.columnIndex="2" />
+                  <TextField fx:id="minTextField" layoutX="195.0" layoutY="7.0" maxWidth="-Infinity" prefWidth="100.0" promptText="Min" GridPane.columnIndex="4" />
+               </children>
+            </GridPane>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="75.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="110.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="sourceFieldLabel" text="Source Label" GridPane.columnIndex="1" />
+                  <TextField fx:id="sourceTextField" maxWidth="-Infinity" prefWidth="150.0" promptText="Source Input" GridPane.columnIndex="2" />
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onSave" styleClass="sm-button" text="Save" />
+                  <Button mnemonicParsing="false" onAction="#onCancel" styleClass="sm-button" text="Cancel" />
+               </children>
+               <padding>
+                  <Insets right="30.0" />
+               </padding>
+            </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
